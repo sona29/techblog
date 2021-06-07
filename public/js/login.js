@@ -26,8 +26,13 @@ const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#name-signup').value.trim();
+  console.log(name);
+
   const email = document.querySelector('#email-signup').value.trim();
+  console.log(email);
+
   const password = document.querySelector('#password-signup').value.trim();
+  console.log(password);
 
   if (name && email && password) {
     const response = await fetch('/api/users', {
@@ -37,8 +42,10 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      console.log('ok');
       document.location.replace('/profile');
     } else {
+      console.log('else');
       alert(response.statusText);
     }
   }
