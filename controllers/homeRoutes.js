@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -38,10 +38,22 @@ router.get('/blog/:id', async (req, res) => {
       ],
     });
 
+    //for comments
+    const { count, commentData } = await Comment.findAndCountAll({
+      where: {
+        blog_id: req.params.id,
+      },
+    });
+
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+    // console.log(count);
+    // console.log(rows);
+
     const blog = blogData.get({ plain: true });
 
     res.render('blog', {
       ...blog,
+      comments,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
