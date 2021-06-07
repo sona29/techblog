@@ -43,6 +43,13 @@ router.get('/blog/:id', async (req, res) => {
       where: {
         blog_id: req.params.id,
       },
+
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
     });
 
     const comments = rows.map((comment) => comment.get({ plain: true }));
