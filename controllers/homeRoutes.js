@@ -39,15 +39,13 @@ router.get('/blog/:id', async (req, res) => {
     });
 
     //for comments
-    const { count, commentData } = await Comment.findAndCountAll({
+    const { count, rows } = await Comment.findAndCountAll({
       where: {
         blog_id: req.params.id,
       },
     });
 
-    const comments = commentData.map((comment) => comment.get({ plain: true }));
-    // console.log(count);
-    // console.log(rows);
+    const comments = rows.map((comment) => comment.get({ plain: true }));
 
     const blog = blogData.get({ plain: true });
 
@@ -57,7 +55,8 @@ router.get('/blog/:id', async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    res.status(500).json(err.message);
   }
 });
 
