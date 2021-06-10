@@ -13,7 +13,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/blog/' + blog_id);
     } else {
       alert('Failed to post comment');
     }
