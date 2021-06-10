@@ -2,17 +2,20 @@
   <h2>{{title}}</h2>
   
   <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <div class="shadow p-3 mb-5 bg-white rounded">
+  Created by {{user.name}} on {{format_date date_created}}
+  </div>
 
 
-<h2>Comments</h2>
+<h2><i class="fas fa-comments"></i> Comments</h2>
   {{#each comments as |comment| }}
   
-  <div class="form-group">
+  <div class="shadow-sm p-3 mb-5 rounded comment">
      {{comment.description}}
      
      -{{user.name}}, {{format_date date_created}}
   </div>
+  
   {{/each}}
 
 

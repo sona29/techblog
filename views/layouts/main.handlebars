@@ -5,13 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
+   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <h1><a class="navbar-brand" href="/">The Tech Blog</a></h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+         <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">Dashboard</a> |
+        <button class="no-button" id="logout">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </li>  
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+
+
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    {{!-- <header class="display-flex justify-space-between align-center p-2">
       <h1>
         <span role="img" aria-label="money">💸</span>
         <a href="/">The Tech Blog!</a>
@@ -25,7 +57,7 @@
         <a href="/login">Login</a>
         {{/if}}
       </nav>
-    </header>
+    </header> --}}
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}

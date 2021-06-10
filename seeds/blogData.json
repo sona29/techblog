@@ -1,17 +1,17 @@
 [
     {
-      "title": "Music Near Me",
-      "description": "A mobile app that will send you notifications whenever a concert is playing in your area."
+      "title": "Ten Years of Breaches in One Image",
+      "description": "This isn’t a comprehensive list of every breach in history — it’s a safe bet we don’t know about some yet — but it’s a good survey of the login credentials available on the internet today. We’ve included a cumulative scale marker to give a sense of the full scope. We were a little surprised to find that the database contains more usernames than there are human beings alive on Earth. Of course, with more than 500 separate breaches, there’s ample opportunity for human beings to double up on leaked accounts but the scale of compromised information is still staggering."
      
     },
     {
-      "title": "The Ultimate Tech Quiz",
-      "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+      "title": "Will Apple end the newsletter boom?",
+      "description": "Today, let’s talk about one of Apple’s many announcements this week at its Worldwide Developer Conference, which some see as a possible threat to the rise of journalism distributed by email. If that sounds self-indulgent, given that it’s coming from a journalist who distributes his work via email, I apologize. But it touches on so many of the subjects of interest to us here — a tech giant’s ability to reshape markets to its liking; how journalism will navigate the platform era; what we mean when we talk about privacy — that I hope I can pique your interest at least a little."
       
     },
     {
-      "title": "Roll 'Em Up",
-      "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+      "title": "HBO Max has been busted for days",
+      "description": "Separately, on Friday, The Verge contacted the service about reported issues affecting the new Siri Remote’s scrubbing feature — though that issue was not limited to just HBO Max. At the time, a spokesperson said that it was aware of player control issues as well as “a few isolated reports” of HDR playback problems. But the spokesperson also added that the company did not believe the HDR issues were related to an update, as the most recent update at the time did not include changes to the video player itself"
       
     }
   ]

@@ -31,7 +31,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/blogs');
+      document.location.replace('/profile');
     } else {
       alert('Failed to delete blog');
     }
@@ -42,6 +42,6 @@ document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
 
-// document
-//   .querySelector('.project-list')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('.project-list')
+  .addEventListener('click', delButtonHandler);
