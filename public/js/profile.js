@@ -25,6 +25,7 @@ const newFormHandler = async (event) => {
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
+    alert(id);
 
     const response = await fetch(`/api/blogs/${id}`, {
       method: 'DELETE',
@@ -38,10 +39,29 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const updateButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    alert(id);
+
+    // const response = await fetch(`/api/blogs/${id}`, {
+    //   method: 'PUT',
+    // });
+
+    // if (response.ok) {
+    //   document.location.replace('/profile');
+    // } else {
+    //   alert('Failed to delete blog');
+    // }
+  }
+};
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
 
+document.querySelector('.delete').addEventListener('click', delButtonHandler);
+
 document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  .querySelector('.update')
+  .addEventListener('click', updateButtonHandler);
