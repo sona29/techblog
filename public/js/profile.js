@@ -1,3 +1,20 @@
+var updateLink = document.querySelectorAll('.update');
+
+for (var i = 0; i < updateLink.length; i++) {
+  updateLink[i].addEventListener('click', function (event) {
+    const id = event.target.getAttribute('data-update-id');
+    const response = fetch(`/api/post/edit/${id}`, {
+      method: 'PUT',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to update blog');
+    }
+  });
+}
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -25,7 +42,6 @@ const newFormHandler = async (event) => {
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-    alert(id);
 
     const response = await fetch(`/api/blogs/${id}`, {
       method: 'DELETE',
@@ -60,8 +76,8 @@ document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
 
-document.querySelector('.delete').addEventListener('click', delButtonHandler);
+// document.querySelector('.delete').addEventListener('click', delButtonHandler);
 
 document
-  .querySelector('.update')
-  .addEventListener('click', updateButtonHandler);
+  .querySelector('.project-list')
+  .addEventListener('click', delButtonHandler);
