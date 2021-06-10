@@ -98,7 +98,7 @@ router.get('/login', (req, res) => {
 });
 
 //edit post
-router.get('/post/edit/:id', async (req, res) => {
+router.get('/blog/edit/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
 

@@ -38,7 +38,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 router.put('/edit/:id', async (req, res) => {
   try {
-    const editPost = await Post.update(
+    const editPost = await Blog.update(
       {
         title: req.body.title,
         description: req.body.description,
@@ -52,7 +52,7 @@ router.put('/edit/:id', async (req, res) => {
 
     res.status(200).json(editPost);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json(err.message);
   }
 });
 

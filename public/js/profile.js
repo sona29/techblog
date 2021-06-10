@@ -1,14 +1,17 @@
 var updateLink = document.querySelectorAll('.update');
 
 for (var i = 0; i < updateLink.length; i++) {
-  updateLink[i].addEventListener('click', function (event) {
+  updateLink[i].addEventListener('click', async (event) => {
     const id = event.target.getAttribute('data-update-id');
-    const response = fetch(`/api/post/edit/${id}`, {
+    const response = await fetch(`/api/blogs/edit/${id}`, {
       method: 'PUT',
     });
 
+    console.log(response);
+
     if (response.ok) {
-      document.location.replace('/profile');
+      console.log(response);
+      // document.location.replace(`/blog/${id}`);
     } else {
       alert('Failed to update blog');
     }
