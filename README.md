@@ -22,31 +22,27 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Mock up
 
-- The following image shows the web application's appearance in different devices
+## Home Page
 
-## Desktop
+![alt text](images/homepage.png)
 
-![alt text](images/desktop.png)
+## Blog Detail Page
 
-## Ipad pro
+![alt text](images/blog-details.png)
 
-![alt text](images/ipad.png)
+## Dashboard
 
-## Iphone X
-
-![alt text](images/mobile.png)
+![alt text](images/dashboard.png)
 
 ## Installation
 
-This site is deployed at
+This site is deployed at https://damp-badlands-21790.herokuapp.com/
 
 ## Usage
 
 The user first needs to create login details. After logging in, user can publish article. The user can also view other users article and comment on the article as well. User can edit and delete their articles as well. 
 
-## Test
 
-npm test
 
 ## Contribution
 
@@ -64,6 +60,4 @@ Email: sona.shrestha004@gmail.com
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Walk-through Video
 
-##### Video: [TeamProfile Generator Walk-through](https://drive.google.com/file/d/1xpg35eNshSvpFfMv1DTstRLhJj6fJBHl/view)
