@@ -2,15 +2,18 @@ var updateLink = document.querySelectorAll('.update');
 
 for (var i = 0; i < updateLink.length; i++) {
   updateLink[i].addEventListener('click', async (event) => {
+    console.log('update button clicked');
     const id = event.target.getAttribute('data-update-id');
-    const response = await fetch(`/api/blogs/edit/${id}`, {
-      method: 'PUT',
+    console.log(id);
+    const response = await fetch(`/blog/edit/${id}`, {
+      method: 'GET',
     });
 
     console.log(response);
 
     if (response.ok) {
       console.log(response);
+      window.location = response.url;
       // document.location.replace(`/blog/${id}`);
     } else {
       alert('Failed to update blog');
@@ -59,19 +62,19 @@ const delButtonHandler = async (event) => {
 };
 
 const updateButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  if (event.target.hasAttribute('data-update-id')) {
+    const id = event.target.getAttribute('data-update-id');
     alert(id);
 
-    // const response = await fetch(`/api/blogs/${id}`, {
-    //   method: 'PUT',
-    // });
+    const response = await fetch(`/api/blogs/${id}`, {
+      method: 'PUT',
+    });
 
-    // if (response.ok) {
-    //   document.location.replace('/profile');
-    // } else {
-    //   alert('Failed to delete blog');
-    // }
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete blog');
+    }
   }
 };
 
@@ -84,3 +87,7 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+// document
+//   .querySelector('.project-list')
+//   .addEventListener('click', updateButtonHandler);

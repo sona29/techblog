@@ -1,22 +1,24 @@
-const form = document.querySelector('.edit-post');
+// const form = document.querySelector('.edit-blog');
 
-const logValue = async (event) => {
+const updateFormHandler = async (event) => {
   event.preventDefault();
-  const title = document.getElementById('post-title').value.trim();
-  const description = document.getElementById('post-description').value.trim();
-  const id = document.querySelector('.edit-post').dataset.id;
+  const title = document.getElementById('blog-name').value.trim();
+  const description = document.getElementById('blog-desc').value.trim();
+  const id = document.getElementById('blog_id').value.trim();
 
-  const response = await fetch(`/api/post/edit/${id}`, {
+  const response = await fetch(`/api/blogs/edit/${id}`, {
     method: 'PUT',
     body: JSON.stringify({ title, description }),
     headers: { 'Content-Type': 'application/json' },
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace('/profile');
   } else {
     alert(response.statusText);
   }
 };
 
-form.addEventListener('submit', logValue);
+document
+  .querySelector('.update-blog-form')
+  .addEventListener('submit', updateFormHandler);
