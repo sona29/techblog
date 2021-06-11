@@ -28,7 +28,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Blog Detail Page
 
-![alt text](images/blog-details.png)
+![alt text](images/blog-detail.png)
 
 ## Dashboard
 
