@@ -59,6 +59,7 @@ router.get('/blog/:id', async (req, res) => {
     res.render('blog', {
       ...blog,
       comments,
+      count,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
