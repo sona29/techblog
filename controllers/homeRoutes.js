@@ -100,11 +100,11 @@ router.get('/login', (req, res) => {
 //edit post
 router.get('/blog/edit/:id', async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Blog.findByPk(req.params.id);
 
     const posts = postData.get({ plain: true });
 
-    res.render('editpost', {
+    res.render('editblog', {
       ...posts,
       logged_in: req.session.logged_in,
     });
