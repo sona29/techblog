@@ -98,7 +98,7 @@ router.get('/login', (req, res) => {
 });
 
 //edit post
-router.get('/blog/edit/:id', async (req, res) => {
+router.get('/blog/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Blog.findByPk(req.params.id);
 
@@ -106,7 +106,7 @@ router.get('/blog/edit/:id', async (req, res) => {
 
     res.render('editblog', {
       ...posts,
-      logged_in: req.session.logged_in,
+      logged_in: true,
     });
   } catch (err) {
     res.status(00).json(err);
